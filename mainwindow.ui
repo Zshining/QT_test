@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>452</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>测试工具</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>240</y>
+      <width>167</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::ActionsContextMenu</enum>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;账号&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="accessibleName">
+     <string/>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="frame">
+     <bool>true</bool>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="placeholderText">
+     <string>              用户名</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>280</y>
+      <width>167</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="whatsThis">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;密码&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::PasswordEchoOnEdit</enum>
+    </property>
+    <property name="placeholderText">
+     <string>               密码</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="login">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>320</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>登录</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="register_2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>240</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>注册</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="getpass">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>280</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>找回密码</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>431</width>
+      <height>431</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>register_2</sender>
+   <signal>clicked()</signal>
+   <receiver>centralwidget</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>667</x>
+     <y>274</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
