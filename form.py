@@ -347,7 +347,8 @@ class Ui_Form(object):
         self.checkBox_9.toggled['bool'].connect(lambda : self.setLabelText2(9))
         self.checkBox_10.toggled['bool'].connect(lambda : self.setLabelText2(10))
 
-        self.pushButton.clicked.connect(self.msg)
+        self.pushButton.clicked.connect(lambda : self.msg('read'))
+        self.pushButton_2.clicked.connect(lambda : self.msg('save'))
         self.retranslateUi(Form)
         self.pushButton_3.clicked.connect(Form.close)
         #for i in range(2,11):
@@ -374,7 +375,7 @@ class Ui_Form(object):
             else:
                 eval("self.label_" + str(checkBox_label[num]) +".setText('<html><head/><body><p><span style=\" font-size:14pt; font-weight:600;\">(</span><span style=\" font-size:16pt; font-weight:600; color:#ff0000;\">✖</span><span style=\" font-size:14pt; font-weight:600;\">)</span></p></body></html>')")
 
-    def msg(self):
+    def msg(self, operations):
         #directory1 = QFileDialog.getExistingDirectory(None,
         #            "选取文件夹",
         #            "./")                 #起始路径
@@ -390,12 +391,20 @@ class Ui_Form(object):
         #            "All Files (*);;Text Files (*.txt)")
         #print(files,ok1)
 
-        fileName2, ok2 = QFileDialog.getSaveFileName(None,
-                    "文件保存",
-                    "./",
-                    "All Files (*);;Text Files (*.txt)")
-        f = open(fileName2, 'w')
-        f.close()
+        if operations == 'save':
+            fileName2, ok2 = QFileDialog.getSaveFileName(None,
+                        "文件保存",
+                        "./",
+                        "All Files (*);;Text Files (*.txt)")
+            f = open(fileName2, 'w')
+            f.close()
+        elif operations == 'read':
+            fileName1, filetype = QFileDialog.getOpenFileName(None,
+                        "选取文件",
+                        "./",
+                        "All Files (*);;Text Files (*.txt)")  #设置文件扩展名过滤,注意用双分号间隔
+            print(fileName1,filetype)
+
 
     def show_progress(self, num, time_interval):
         for value in range(num):
